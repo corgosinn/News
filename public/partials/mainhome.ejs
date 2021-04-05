@@ -1,0 +1,253 @@
+<head>
+    <link rel="stylesheet" href="/style/global.css" type="text/css">
+    <link rel="stylesheet" href="/style/mainhome.css" type="text/css">
+</head>
+
+
+<main>
+    <div class='banner_main container hide '>
+        <div class="banner_conf">
+            <div class="block w100 bk ">
+                <div class="relative bnner flex flexconfig">
+                    <div class="bnnertrasparence"></div>
+                    <ul class="">
+                        <li class="text_banner">
+                            Ministro da a, Fernando Azevedo e Silva deixa o cargo
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="relative block grid_news_block ">
+        <div class="grid_news container block">
+            <div class="container_grid relative">
+                <div class="grid absolute grid-news_conf">
+                    <div class="grid-item1">
+                        <div class="bstn-h1 block relative no-photo">
+                            <a href="/<%=id%>" class="block pointer">
+                                <ul class="bstn-list onlyflex flex-column absolute">
+                                    <li class="bstn-itemlist bolder">
+                                        <span class="bstn-chapeu">
+                                            <%=chapeu%>
+                                        </span>
+                                    </li>
+                                    <li class="bstn-itemlist bstn-hl-space"></li>
+                                    <li class="bstn-itemlist empty"></li>
+                                    <li class="bstn-itemlist bstn-video empty"></li>
+                                    <li class="bstn-itemlist ">
+                                        <div>
+                                            <div class="block">
+                                                <span class="bstn-h1-title color1 relative">
+                                                    <%=title%>
+                                                </span>
+                                            </div>
+                                            <span class="bstn-hl-summary block">
+                                                <%=resume%>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="bstn-h1 block relative ">
+                            <div class="bgblack"></div>
+                            <a href="/<%=id1%>" class="block bgimg zoom" style="background-image: url('<%=cardimg1%>');">
+                                <ul class=" bstn-list onlyflex flex-column absolute">
+                                    <li class="bstn-itemlist bolder">
+                                        <span class="bstn-chapeu-col block">
+                                            <%=chapeu1%>
+                                        </span>
+                                    </li>
+                                    <li class="bstn-itemlist empty"></li>
+                                    <li class="bstn-itemlist empty"></li>
+                                    <li class="bstn-itemlist bstn-video empty"></li>
+                                    <li class="bstn-itemlist ">
+                                        <div>
+                                            <div class="block">
+                                                <span class="bstn-h2-title relative">
+                                                    <%=title1%>
+                                                </span>
+                                            </div>
+                                            <span class="bstn-h2-summary">
+                                                <%=resume1%>
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="bstn-h1 block relative ">
+                            <div class="bgblack"></div>
+                            <a href="/<%=id2%>" class="block bgimg zoom" style="background-image: url('<%=cardimg2%>');">
+                                <ul class=" bstn-list onlyflex flex-column absolute">
+                                    <li class="bstn-itemlist bolder">
+                                        <span class="bstn-chapeu-col block">
+                                            <%=chapeu2%>
+                                        </span>
+                                    </li>
+                                    <li class="bstn-itemlist empty"></li>
+                                    <li class="bstn-itemlist empty"></li>
+                                    <li class="bstn-itemlist bstn-video empty"></li>
+                                    <li class="bstn-itemlist ">
+                                        <div>
+                                            <div class="block">
+                                                <span class="bstn-h2-title relative">
+                                                    <%=title2%>
+                                                </span>
+                                            </div>
+                                            <span class="bstn-h2-summary">
+                                                <%=resume2%>
+                                            </span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="" class="onlyflex flex-row-reverse row ">
+
+        <div class="mt-40px template-left">
+            <div class="block">
+                <div class="block">
+                    <div class="block">
+                        <div class="relative block">
+                            <div class="relative block">
+                                <div class="block">
+                                    <div class=""></div> <!-- I DONT KNOW YET-->
+                                    <div class="block feed">
+
+                                        <% for(let x=numberposts; x>= 0; x--){ %>
+                                            <div id="<%=doc[x]._id%>" class="block bstn-item-shape">
+                                                <div class="grid  feed_grid items-align-start">
+                                                    <div class="feed-post-header color3 font-weight600 block">
+                                                        <span class="feed-post-header-chapeu">
+                                                            <%=doc[x].cardchapeutitle%>
+                                                        </span>
+                                                    </div>
+                                                    <div class="feed-post-body-title font-weight700 block">
+                                                        <div class="block">
+                                                            <a href="/<%=doc[x]._id%>" class="feed-post-link color1">
+                                                                <%=doc[x].cardbodytitle%>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="feed-post-body-resumo font-weight400">
+                                                        <%=doc[x].cardbodyresume%>
+                                                    </div>
+                                                    <%if(doc[x].cardimg){ %>
+                                                        <div  class="feed-media-wrapper block">
+                                                            <a href="/<%=doc[x]._id%>">
+                                                                <div class="bstn-fd-item-cover ">
+
+                                                                    <picture class="bstn-fd-cover-picture"
+                                                                        style="background-image: url('<%=doc[x].cardimg%>');">
+
+                                                                    </picture>
+
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <%}%>
+                                                            <div class="feed-post-metadata font-weight400">
+                                                                <span class="feed-post-datetime">Há 40 minutos</span>
+                                                                <span class="feed-post-metadata-section"> Blog da
+                                                                    Andréia Sadi
+                                                                </span>
+                                                            </div>
+
+                                                </div>
+                                            </div>
+                                            <% } %>
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="mt-40px template-right">
+            <div class="block h100">
+                <div class="block">
+                    <div class="antal">
+                        <div class="h100 block mb40px">
+                            <div class="block antal">
+                                <div class="block">
+                                    <div class="block item-shape">
+                                        <div>
+                                            <div class="borderbottom-1px padding_1rem">
+                                                <h2 class="font-size-1rem bolder h2_materiasconf">
+                                                    Guia do Imposto de Renda 🦁</h2>
+                                            </div>
+
+                                            <ul class="padding0-15rem ">
+                                                <li class="flex relative padding15rem itemconfiglist">
+                                                    <div>
+                                                        <a class="h3_materiasconf color1">Saiba o que acontece se o
+                                                            contribuinte errar a declaração</a>
+                                                    </div>
+
+                                                </li>
+                                                <li
+                                                    class="flex relative padding15rem itemconfiglist_middle itemconfiglist">
+                                                    <div>
+                                                        <a class="h3_materiasconf color1">Saiba como declarar o auxílio
+                                                            emergencial</a>
+                                                    </div>
+
+                                                </li>
+                                                <li
+                                                    class="flex relative padding15rem itemconfiglist_middle itemconfiglist">
+                                                    <div class="">
+                                                        <a class="h3_materiasconf color1">Teve o salário reduzido em
+                                                            2020? Veja
+                                                            como fazer</a>
+                                                    </div>
+
+                                                </li>
+
+                                            </ul>
+                                            <div class="bordertop-1px seemore_padding">
+                                                <div class="seemore_div">
+                                                    <a class="seemore_text color1">Mais IR 2021</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>

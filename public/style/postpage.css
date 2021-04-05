@@ -1,0 +1,70 @@
+*, :after, :before {
+    box-sizing: inherit;
+    
+    
+}
+.page_content{
+    margin-top: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content_title{
+    font-size: 4.5vw;
+    line-height: 5vw;
+    
+    /* font-size: 3.5rem; */
+    /* line-height: 4rem; */
+
+    letter-spacing: -0.15625rem;
+}
+.parag_text{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+.date_post{
+    display: flex;
+    margin: 2.5rem 2.5rem 2.5rem 0;
+}
+.content_divider{
+    margin: 0 auto 4rem;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+.subtitlepage{
+    margin-top: 1.5rem;
+}
+.content_subtitle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: calc(10px + 1vw);
+    padding-left: 0;
+    font-weight: 300;
+    line-height: 1.75rem;
+    text-align: left;
+    letter-spacing: -.03125rem;
+}
+
+@media (max-width: 768px){
+    .page_content{
+        width: 95vw!important;
+    }
+}
+@media (max-width: 700px){
+    .content_title{
+        font-size: calc(16px + 3vw);
+        line-height: calc(10px + 5vw);
+        
+        /* font-size: 3.5rem; */
+        /* line-height: 4rem; */
+    
+        letter-spacing: -0.15625rem;
+    }
+}
+@media ( max-width: 293px ){
+    *{
+        overflow: auto;
+    }
+
+}

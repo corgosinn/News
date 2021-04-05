@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    
+
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+a,img{
+    cursor: pointer;
+}
+.bgcolor1{
+    background-color: #C4170C;
+}
+.bgcolor2{
+    background-color: #C4170C;
+}
+.bgcolor3{
+    background-color: #f3f3f3;
+}
+
+.color1{
+    color: #c4170c;
+}
+.color2{
+    color: #a80000;
+}
+.color3{
+    color: #333;
+}
+.color4{
+    color: #fff;
+}
+.color5{
+    color: #555;
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    background-color: #fbfbfb;
+}
+.container{
+    max-width: 1500px;
+    margin: auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.onlyflex{
+    display: flex;
+}
+.wid60rem{
+    width: 70vw;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-row{
+    flex-direction: row-reverse;
+}
+.block{
+    display: block;
+}
+.inline-block{
+    display: inline-block;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.grid{
+    display: grid;
+}
+.w100{
+    width: 100%;
+}
+.txt-white{
+    color: #fff;
+}
+.empty{
+    flex-grow: 1;
+}
+.bolder{
+    font-weight: bolder;
+}
+.hide{
+    display: none!important;
+}
+.flex-grow2{
+    flex-grow: 2;
+}.flex-grow1{
+    flex-grow: 1;
+}
+.mt-40px{
+    margin-top: 40px;
+}
+.h100{
+    height: 100%;
+}
+.antal{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+};
+.mb40px{
+    margin-bottom: 40px;
+}
+
+.borderbottom-1px{
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.bordertop-1px{
+    border-top: 1px solid rgb(238, 238, 238);
+}
+.padding1{
+    padding: 1rem 1.5rem;
+}
+.padding0-15rem{
+    padding: 0px 1.5rem;
+}
+.items-align-start{
+    align-items: start;
+}
+
+.font-weight300{
+    font-weight: 300;
+}
+.font-weight400{
+    font-weight: 400;
+}
+.float-right{
+    float: right;
+}
+.font-weight600{
+    font-weight: 600;
+}
+.pointer{
+    cursor: pointer;
+}
+.font-weight700{
+    font-weight: 700;
+}
+.font-weight900{
+    font-weight: 900;
+}
