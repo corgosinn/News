@@ -22,10 +22,41 @@
         <hr class="content_divider wid60rem">
         <div>
             <article class="textpage">
-                <div class="parag_text">
-                    <p class="color3"><%=document.text%></p>
-                </div>
+                <%if(document.text){ %>
+                    <div class="parag_text">
+                        <p class="color3"><%=document.text2%></p>
+                    </div>
+                <%}%>
+
+                <%if(document.midiatext){ %>
+                    <img class="img_post" src="<%=document.midiatext%>">
+
+                <%}%>
+
+                <%if(document.text2){ %>
+                    <div class="parag_text">
+                        <p class="color3"><%=document.text2%></p>
+                    </div>
+                <%}%>
+
+                <%if(document.midiatext2){ %>
+                    <img class="img_post" src="<%=document.midiatext2%>">
+
+                <%}%>
+
+                <%if(document.text3){ %>
+                    <div class="parag_text">
+                        <p class="color3"><%=document.text3%></p>
+                    </div>
+                <%}%>
+
+                <%if(document.midiatext3){ %>
+                    <img class="img_post" src="<%=document.midiatext3%>">
+
+                <%}%>
+
                 
+
 
             </article>
         </div>

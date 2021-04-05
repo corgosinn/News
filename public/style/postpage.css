@@ -1,8 +1,7 @@
 *, :after, :before {
     box-sizing: inherit;
-    
-    
 }
+
 .page_content{
     margin-top: 64px;
     margin-left: auto;
@@ -45,6 +44,10 @@
     text-align: left;
     letter-spacing: -.03125rem;
 }
+.img_post{
+    width: 100%;
+    image-resolution: 100%;
+}
 
 @media (max-width: 768px){
     .page_content{
@@ -60,6 +63,9 @@
         /* line-height: 4rem; */
     
         letter-spacing: -0.15625rem;
+    }
+    .content_subtitle{
+        font-size: 16px;
     }
 }
 @media ( max-width: 293px ){

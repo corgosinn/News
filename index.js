@@ -20,31 +20,38 @@ const postpage = new mongoose.Schema({
   cardvideo: String,
   posttitle: { type: String, required: true },
   postsubtitle: { type: String, required: true },
-  text: { type: String, required: true },
-  midiatext:{ type: String },
-  text2:{ type: String },
-  midiatext2:{ type: String },
-  text3:{ type: String },
-  midiatext3:{ type: String },
-  citacao:{ type: String },
-  citacao1:{ type: String }
+  text: { type: String },
+  midiatext: { type: String },
+  text2: { type: String },
+  midiatext2: { type: String },
+  text3: { type: String },
+  midiatext3: { type: String },
+  citacao: { type: String },
+  citacao1: { type: String }
 
 })
 
 const News = mongoose.model('news', postpage);
 
 let post = new News({
-  cardchapeutitle: 'asdasd',
-  cardbodytitle: 'asds',
-  cardbodyresume: 'asdasd',
-  metadata: { author: 'aaaa', date: Date.now() },
-  cardimg: '',
+  cardchapeutitle: 'Musicando Formiga',
+  cardbodytitle: 'Edital é lançado para premiar profissionais do setor cultural em Formiga',
+  cardbodyresume: 'Objetivo é conceder prêmios para até 70 profissionais que tenham atividade principal diretamente ligada à realização de eventos musicais. Inscrições serão realizadas do dia 19 até dia 23 de abril.',
+  metadata: { author: 'Corgosinho', date: Date.now() },
+  cardimg: '/content/pub1.webp',
   cardvideo: '',
-  posttitle: 'asdasdasd',
-  postsubtitle: 'asdasd',
-  text: 'asdasd'
+  posttitle: 'Edital é lançado para premiar profissionais do setor cultural em Formiga',
+  postsubtitle: '"Musicando Formiga" vai conceder prêmios para até 70 profissionais que tenham atividade principal diretamente ligada à realização de eventos musicais. Inscrições serão realizadas do dia 19 até dia 23 de abril.',
+  text: 'Imagem',
+  midiatext: '/content/pub1.webp',
+  text2: 'Um edital para premiação de profissionais do setor cultural foi publicado pela Prefeitura de Formiga. O objetivo do "Musicando Formiga" é conceder prêmios para até 70 profissionais que tenham atividade principal diretamente ligada à realização de eventos musicais. As inscrições serão realizadas pelo e-mail musicandoformiga@gmail.com do dia 19 até dia 23 de abril.Segundo o edital, publicado no site da Prefeitura, podem participar profissionais que tiveram as atividades profissionais suspensas pelas medidas de combate à Covid- 19: músicos profissionais, bailarinos de bandas e profissionais da área técnica como roadies, técnicos de som ou de luz, e montadores de estrutura de palco.Os participantes devem morar em Formiga e precisam comprovar que, no mínimo 75 % de renda mensal média em 2019, foi proveniente de trabalhos no setor de shows musicais.De acordo com a categoria profissional, os premiados realizarão atividades como contrapartida, conforme cronograma a ser elaborado pela cidade em locais públicos também a serem definidos.Segundo o secretário de Cultura, Alex Arouca, as histórias da vida profissional de cada artista e técnico serão reunidas em uma revista eletrônica que será feita pela da Secretaria de Cultura."Após a passagem dessa pandemia, quando os eventos públicos voltarem a ser realizados, a população da cidade será agraciada com uma série de eventos que levará entretenimento aos cidadãos, em diversas partes do município", disse.',
+  midiatext2: '',
+  text3: '',
+  midiatext3: '',
+  citacao: '',
+  citacao1: '',
+  links: {}
 })
-
 
 app.set("views", path.resolve(__dirname, "public"));
 app.set("view engine", "ejs");
@@ -73,6 +80,8 @@ db.once('open', () => {
       res.render('newspage.ejs', { doc: doc, document: doc[0] })
 
     }).catch(err => next());
+
+
 
   })
 
