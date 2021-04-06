@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="/style/post.css" type="text/css">
+    <link rel="stylesheet" href="/style/global.css" type="text/css">
+</head>
+<!-- cardchapeutitle: { type: String, required: true },
+cardbodytitle: { type: String, required: true },
+cardbodyresume: { type: String, required: true },
+metadata: { author: { type: String, required: true }, date: { type: Date, required: true } },
+cardimg: String,
+cardvideo: String,
+posttitle: { type: String, required: true },
+postsubtitle: { type: String, required: true },
+text: { type: String },
+midiatext: { type: String },
+text2: { type: String },
+midiatext2: { type: String },
+text3: { type: String },
+midiatext3: { type: String },
+citacao: { type: String },
+citacao1: { type: String } -->
+
+<main>
+    <div>
+        <fieldset id="fieldset">
+            <form action="/post" method="POST">
+                <div>
+                    <input type="text" id="cardchapeutitle" name="cardchapeutitle" placeholder="CARD - Texto chapéu" required>
+                    <input type="text" id="cardbodytitle" name="cardbodytitle" placeholder="CARD - Título" required>
+                    <input type="text" id="cardbodyresume" name="cardbodyresume" placeholder="CARD - Resumo" required>
+                    <input type="text" id="cardimg" name="cardimg" placeholder="CARD - Imagem">
+                    <input type="text" id="cardvideo" name="cardvideo" placeholder="CARD - Vídeo">
+                    <input type="text" id="metadata.author" name="metadata.author" placeholder="Autor" required>
+                </div>
+                <br>
+                <div>
+                    <input type="text" id="posttitle" name="posttitle" placeholder="POST - Título" required>
+                    <input type="text" id="postsubtitle" name="postsubtitle" placeholder="POST - Sub-Título" required>
+                    <input type="text" id="text" name="text" placeholder="POST - Texto Principal">
+                    <input type="text" id="midiatext" name="midiatext" placeholder="POST - Primeira Mídia">
+                    <input type="text" id="text2" name="text2" placeholder="POST - Segundo Texto">
+                    <input type="text" id="midiatext2" name="midiatext2" placeholder="POST - Segunda Mídia">
+                    <input type="text" id="text3" name="text3" placeholder="POST - Terceiro Texto">
+                    <input type="text" id="midiatext3" name="midiatext3"  placeholder="POST - Terceira Mídia">
+                    <input type="text" id="citacao" name="citacao" placeholder="POST - Primeira citação">
+                    <input type="text" id="citacao1" name="citacao1" placeholder="POST - Segunda citação">
+
+                </div>
+                <button>Send</button>
+                
+
+
+
+            </form>
+        </fieldset>
+    </div>
+
+
+</main>
