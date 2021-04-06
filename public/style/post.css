@@ -1,3 +1,52 @@
 #fieldset{
-    padding: 50px;
+    padding: 10px;
+}
+picture{
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    width: 100%;
+    margin: auto;
+    
+}
+#cardchapeutitle{
+    width: 40%;
+}
+#cardbodyresume{
+    height: 200px;
+}
+.titlepage{
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+}
+.subtitlepage{
+    width: 80%;
+    padding-bottom: 20px;
+    margin: auto;
+}
+#postsubtitle{
+    height: 100px;
+}
+.parag_text{
+    margin: auto;
+    padding-bottom: 20px;
+    width: 90%;
+}
+.parag_text input{
+    
+    height: 300px;
+}
+picture{
+    border-radius: 8px;
+    margin: auto;
+    width: 300px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+picture select{
+    margin: auto;
+    
+    width: 50%;
 }

@@ -6,17 +6,13 @@ const path = require('path');
 
 
 
-
-
-
-
-
-
 router.use(express.static(__dirname + 'public'));
 router.use("/style", express.static(path.join(__dirname, '../' + "/public/style")));
 router.use("/content", express.static(path.join(__dirname, '../' + "/public/content")));
 router.use("/script", express.static(path.join(__dirname, '../' + "/public/script")));
 
+var fs = require('fs');
+var files = fs.readdirSync('./public/content');
 
 router.get('/', async (req, res) => {
     let doc = await News.find().then(async dc => { return await dc })
@@ -32,7 +28,7 @@ router.get('/:id', async (req, res, next) => {
 })
 
 router.get('/post', (req, res) => {
-    res.render('postpage.ejs');
+    res.render('postpage.ejs' , {files});
 })
 
 router.post('/post', express.urlencoded({ extended: true }), async (req, res) => {
