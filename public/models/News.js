@@ -16,15 +16,18 @@ const postpage = new mongoose.Schema({
     text3: { type: String },
     midiatext3: { type: String },
     citacao: { type: String },
-    citacao1: { type: String }
+    citacao1: { type: String },
+
+    clicks:{type:Number,default:0},
+    parent: {type:String} 
 
 })
 const categories = new mongoose.Schema({
     _id: {type:String},
-    ancestors: [{type:String}],
+    clicks:{type:Number,default:0},
     parent: {type:String} 
 })
+const Categories = mongoose.model('categories',categories);
 const News = mongoose.model('news', postpage);
-
 
 module.exports = News;
