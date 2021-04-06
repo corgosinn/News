@@ -35,29 +35,30 @@
 
                                 <div class="bstn-fd-item-cover ">
 
-                                    <picture id="backgroundselector" class="bstn-fd-cover-picture" >
-                                        
-                                        <select  onclick="teste()" id="cardimg" name="cardimg">
-                                            
-                                            <%files.forEach(element => { %>
-                                            <option>/content/<%=element%> </option>
-                                            <% }) %>
-                                            <option value="">Vazio</option>
+                                    <picture id="backgroundselector" class="bstn-fd-cover-picture">
+
+                                        <select onclick="teste()" id="cardimg" name="cardimg">
+
+                                            <%files.forEach(element=> { %>
+                                                <option>/content/<%=element%>
+                                                </option>
+                                                <% }) %>
+                                                    <option value="">Vazio</option>
                                         </select>
 
-                                        <select  id="cardvideo" name="cardvideo" >
+                                        <select id="cardvideo" name="cardvideo">
                                             <option></option>
                                         </select>
                                         <script>
                                             let cardimg = document.getElementById('cardimg');
                                             cardimg.value.onload = teste()
-                                             function teste(){
+                                            function teste() {
                                                 let bacground = document.getElementById('backgroundselector');
                                                 let cardimg = document.getElementById('cardimg');
                                                 bacground.style.backgroundImage = 'url(' + cardimg.value + ')';
                                             }
                                         </script>
-                                        
+
 
                                     </picture>
 
@@ -100,9 +101,14 @@
                                     <input type="text" id="text" name="text" placeholder="POST - Texto Principal">
 
                                 </div>
-                                <picture class="img_post" style="background-color: slategray;">
-                                    <select id="midiatext" name="midiatext" >
-                                        
+                                <picture class="img_post">
+                                    <select onload="img(this)" onclick="img(this)" onchange="img(this)" id="midiatext" name="midiatext">
+                                        <option value="">Vazio</option>
+                                        <%files.forEach(element=> { %>
+                                            <option>/content/<%=element%>
+                                            </option>
+                                            <% }) %>
+
                                     </select>
                                 </picture>
 
@@ -112,9 +118,14 @@
                                     </p>
                                 </div>
 
-                                <picture class="img_post" style="background-color: slategray;">
-                                    <select id="midiatext2" name="midiatext2" >
-                                        
+                                <picture class="img_post" onload="img(this)" onchange="img(this)" onclick="img(this)">
+                                    <select id="midiatext2" name="midiatext2">
+                                        <option value="">Vazio</option>
+                                        <%files.forEach(element=> { %>
+                                            <option>/content/<%=element%>
+                                            </option>
+                                            <% }) %>
+
                                     </select>
                                 </picture>
 
@@ -124,13 +135,24 @@
                                     </p>
                                 </div>
 
-                                <picture class="img_post" style="background-color: slategray;">
-                                    <select id="midiatext3" name="midiatext3" >
+                                <picture class="img_post" onload="img(this)" onchange="img(this)" onclick="img(this)">
+                                    <select id="midiatext3" name="midiatext3">
+                                        <option value="">Vazio</option>
+                                        <%files.forEach(element=> { %>
+                                            <option>/content/<%=element%>
+                                            </option>
+                                            <% }) %>
 
                                     </select>
                                 </picture>
                                 <script>
-                                    function img(){
+
+
+
+                                    function img(element) {
+                                        let picture = element.closest('picture');
+                                        console.log(picture)
+                                        picture.style.backgroundImage = 'url(' + element.value + ')';
 
                                     }
                                 </script>
@@ -143,9 +165,9 @@
                     <input type="text" id="citacao1" name="citacao1" placeholder="POST - Segunda citação">
 
                 </div>
-
-                <button>Send</button>
-
+                <div id="button">
+                    <button class="bgcolor1 color4">Send</button>
+                </div>
 
 
 
