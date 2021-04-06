@@ -19,6 +19,12 @@ const postpage = new mongoose.Schema({
     citacao1: { type: String }
 
 })
+const categories = new mongoose.Schema({
+    _id: {type:String},
+    ancestors: [{type:String}],
+    parent: {type:String} 
+})
 const News = mongoose.model('news', postpage);
+
 
 module.exports = News;

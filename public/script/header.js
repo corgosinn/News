@@ -16,7 +16,6 @@ function menuopen(){
             curtain.classList.remove('menu-curtain-opacity')
             setTimeout(()=>{curtain.classList.remove('block');curtain.classList.remove('menu-curtain-visible');},500)
             menu.style.width = '0px';
-            console.log(menu.style.width);
             break;
         default:
             

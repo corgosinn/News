@@ -12,7 +12,8 @@ a,img{
     cursor: pointer;
 }
 .bgcolor1{
-    background-color: #C4170C;
+    background-color: #005ba2;
+    /* background-color: #C4170C; */
 }
 .bgcolor2{
     background-color: #C4170C;
@@ -22,8 +23,12 @@ a,img{
 }
 
 .color1{
-    color: #c4170c;
+    color: #005ba2;
 }
+.color1:hover{
+    color: #014375;
+}
+
 .color2{
     color: #a80000;
 }

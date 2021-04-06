@@ -118,8 +118,8 @@
                                     </p>
                                 </div>
 
-                                <picture class="img_post" onload="img(this)" onchange="img(this)" onclick="img(this)">
-                                    <select id="midiatext2" name="midiatext2">
+                                <picture class="img_post">
+                                    <select id="midiatext2" onload="img(this)" onchange="img(this)" onclick="img(this) name="midiatext2">
                                         <option value="">Vazio</option>
                                         <%files.forEach(element=> { %>
                                             <option>/content/<%=element%>
@@ -135,8 +135,8 @@
                                     </p>
                                 </div>
 
-                                <picture class="img_post" onload="img(this)" onchange="img(this)" onclick="img(this)">
-                                    <select id="midiatext3" name="midiatext3">
+                                <picture class="img_post" >
+                                    <select id="midiatext3" onload="img(this)" onchange="img(this)" onclick="img(this)" name="midiatext3">
                                         <option value="">Vazio</option>
                                         <%files.forEach(element=> { %>
                                             <option>/content/<%=element%>

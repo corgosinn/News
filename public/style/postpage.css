@@ -48,6 +48,9 @@
     width: 100%;
     image-resolution: 100%;
 }
+.parag_text{
+    margin-top: 15px;
+}
 
 @media (max-width: 768px){
     .page_content{
