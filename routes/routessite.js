@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const routesnews = require('../routes/newsupdate');
 const News = require('../public/models/News')
+const Categories = require('../public/models/categories')
 const path = require('path');
+const routerCat = require('../controllers/category')
 
 
 
@@ -10,25 +12,26 @@ router.use(express.static(__dirname + 'public'));
 router.use("/style", express.static(path.join(__dirname, '../' + "/public/style")));
 router.use("/content", express.static(path.join(__dirname, '../' + "/public/content")));
 router.use("/script", express.static(path.join(__dirname, '../' + "/public/script")));
+router.use("/icons", express.static(path.join(__dirname, '../' + "/public/icon")));
 
 var fs = require('fs');
+const { networkInterfaces } = require('os');
 var files = fs.readdirSync('./public/content');
 
-router.get('/', async (req, res) => {
+
+router.get('/',async (req, res) => {
     let doc = await News.find().then(async dc => { return await dc })
     res.render("index", routesnews.substitute(doc))
 })
 
-router.get('/:id', async (req, res, next) => {
-    let id = req.params.id;
-    await News.find({ _id: id }).then(doc => {
-        res.render('newspage.ejs', { doc: doc, document: doc[0] })
 
-    }).catch(err => next());
-})
+
+
+
+
 
 router.get('/post', (req, res) => {
-    res.render('postpage.ejs' , {files});
+    res.render('postpage.ejs', { files });
 })
 
 router.post('/post', express.urlencoded({ extended: true }), async (req, res) => {
@@ -46,5 +49,34 @@ router.post('/post', express.urlencoded({ extended: true }), async (req, res) =>
     }
 
 })
+
+
+
+function pagination(model) {
+    return (req, res, next) => {
+        let page = parseInt(req.query.page);
+        let limit = parseInt(req.query.limit);
+        let startIndex = (page - 1) * limit;
+        let endIndex = page * limit;
+
+        const results = {};
+        if (endIndex < model.length) {
+
+            results.next = {
+                page: page + 1,
+                limit: limit
+            };
+        }
+        if (startIndex > 0) {
+
+            results.prev = {
+                page: page - 1,
+                limit: limit
+            };
+        }
+        results.results = model.slice(startIndex, endIndex);
+        res.pagination = results;
+    }
+}
 
 module.exports = router;

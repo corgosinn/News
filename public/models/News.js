@@ -22,12 +22,7 @@ const postpage = new mongoose.Schema({
     parent: {type:String} 
 
 })
-const categories = new mongoose.Schema({
-    _id: {type:String},
-    clicks:{type:Number,default:0},
-    parent: {type:String} 
-})
-const Categories = mongoose.model('categories',categories);
+
 const News = mongoose.model('news', postpage);
 
 module.exports = News;

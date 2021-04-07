@@ -29,7 +29,7 @@
                 <div class="grid absolute grid-news_conf">
                     <div class="grid-item1">
                         <div class="bstn-h1 block relative no-photo">
-                            <a href="/<%=id%>" class="block pointer">
+                            <a href="/noticias/<%=parent%>/<%=id%>" class="block pointer">
                                 <ul class="bstn-list onlyflex flex-column absolute">
                                     <li class="bstn-itemlist bolder">
                                         <span class="bstn-chapeu">
@@ -58,7 +58,7 @@
                     <div class="grid-item">
                         <div class="bstn-h1 block relative ">
                             <div class="bgblack"></div>
-                            <a href="/<%=id1%>" class="block bgimg zoom" style="background-image: url('<%=cardimg1%>');">
+                            <a href="/noticias/<%=parent1%>/<%=id1%>" class="block bgimg zoom" style="background-image: url('<%=cardimg1%>');">
                                 <ul class=" bstn-list onlyflex flex-column absolute">
                                     <li class="bstn-itemlist bolder">
                                         <span class="bstn-chapeu-col block">
@@ -88,7 +88,7 @@
                     <div class="grid-item">
                         <div class="bstn-h1 block relative ">
                             <div class="bgblack"></div>
-                            <a href="/<%=id2%>" class="block bgimg zoom" style="background-image: url('<%=cardimg2%>');">
+                            <a href="/noticias/<%=parent2%>/<%=id2%>" class="block bgimg zoom" style="background-image: url('<%=cardimg2%>');">
                                 <ul class=" bstn-list onlyflex flex-column absolute">
                                     <li class="bstn-itemlist bolder">
                                         <span class="bstn-chapeu-col block">
@@ -143,7 +143,7 @@
                                                     </div>
                                                     <div class="feed-post-body-title font-weight700 block">
                                                         <div class="block">
-                                                            <a href="/<%=doc[x]._id%>" class="feed-post-link color1">
+                                                            <a href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>" class="feed-post-link color1">
                                                                 <%=doc[x].cardbodytitle%>
                                                             </a>
                                                         </div>
@@ -153,7 +153,7 @@
                                                     </div>
                                                     <%if(doc[x].cardimg){ %>
                                                         <div  class="feed-media-wrapper block">
-                                                            <a href="/<%=doc[x]._id%>">
+                                                            <a href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>">
                                                                 <div class="bstn-fd-item-cover ">
 
                                                                     <picture class="bstn-fd-cover-picture"

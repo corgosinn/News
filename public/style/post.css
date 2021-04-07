@@ -10,6 +10,16 @@ input{
     margin: auto;
     
 }
+.maintext{
+    padding: 10px;
+    text-align: center;
+    margin:auto;
+    font-size: 30px;
+}
+.cont{
+    margin:auto;
+    max-width: 1000px;
+}
 #cardchapeutitle{
     width: 40%;
 }
