@@ -19,13 +19,21 @@ const { networkInterfaces } = require('os');
 var files = fs.readdirSync('./public/content');
 
 
-router.get('/',async (req, res) => {
+router.get('/', async (req, res) => {
     let doc = await News.find().then(async dc => { return await dc })
     res.render("index", routesnews.substitute(doc))
 })
 
+router.get('/search', async (req, res, next) => {
+    let id = req.query.q;
+    
+    let categories = req.params.categories;
+    let doc = await News.find({ $text: { $search: id } }).then(async doc => {
+        
+        res.render('noticias.ejs', { doc: doc, document: doc[0], numberposts: doc.length - 1 })
 
-
+    }).catch(err => next());
+})
 
 
 

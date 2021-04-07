@@ -3,10 +3,13 @@
     <link rel="stylesheet" href="/style/mainhome.css" type="text/css">
 </head>
 
-<div id="" class="onlyflex flex-row-reverse row ">
+<%if (doc.length <= 0){%>
+    <h1>Nada encontrado</h1>
+<%}%>
+<div id="" class=" row ">
 
     <div class="mt-40px ">
-        <div class="block w100">
+        <div class="block">
             <div class="block">
                 <div class="block">
                     <div class="relative block">
@@ -74,3 +77,4 @@
 
         </div>
     </div>
+</div>

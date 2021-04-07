@@ -23,6 +23,23 @@ const postpage = new mongoose.Schema({
 
 })
 
+
+postpage.index({
+    cardchapeutitle: 'text',
+    cardbodytitle: 'text',
+    cardbodyresume: 'text',
+    
+    posttitle: 'text',
+    postsubtitle: 'text',
+    text: 'text',
+    text2: 'text',
+    text3: 'text',
+    citacao: 'text',
+    citacao1: 'text',
+    parent: 'text',
+})
 const News = mongoose.model('news', postpage);
+News.createIndexes();
+
 
 module.exports = News;

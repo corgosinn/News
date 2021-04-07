@@ -427,9 +427,14 @@ header{
         display: none!important;
     }
     fieldset input{
-        display: none!important;
+        visibility: hidden;
     }
     .lupa{
         right: 3px;
+    }
+}
+@media (max-width: 400px){
+    .content-top{
+        display: none!important;
     }
 }
