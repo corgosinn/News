@@ -426,8 +426,12 @@ header{
     .right-content-top{
         display: none!important;
     }
-    fieldset input{
-        visibility: hidden;
+    #busca-campo{
+        width: 25px;
+        height: 25px;
+        transform: translateY(13%);
+        background-color:transparent;
+        padding: 0;
     }
     .lupa{
         right: 3px;

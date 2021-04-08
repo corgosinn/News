@@ -464,7 +464,7 @@ ul .grid_news{
     .grid-item{
         
         grid-column: 1;
-        grid-row: span 2;
+        grid-row: span 1;
         
     }
     .bstn-list{
@@ -477,6 +477,14 @@ ul .grid_news{
         grid-column: 2;
     }
     
+}
+@media ( max-width: 550px ){
+    .bstn-h1{
+        height: auto;
+    }
+    .grid-news_conf{
+    height: auto;
+    }
 }
 @media ( max-width: 293px ){
     *{

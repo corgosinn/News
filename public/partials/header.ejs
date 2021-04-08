@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="/style/global.css" type="text/css">
 </head>
 
-<header class="header">
+<header  class="header">
     <div onclick="menuopen()" class="menu-curtain" id="menu-curtain"></div>
     <nav id="menu-container" class="menu-container">
         <div id="menu-rounder" class="block">
@@ -120,14 +120,14 @@
                         </svg> -->
                     </h1>
                 </a></div>
-            <div class="search-conf">
-                <div class="search-area header-navegacao-color flexitem">
+            <div class="search-conf "  id="focusSearch" >
+                <div class="search-area header-navegacao-color flexitem" >
                     <div class="busca-padrao">
-                        <form class="form-search" action="/search" name="searchwebsite" id="search" method="GET">
+                        <form class="form-search"  action="/search" name="searchwebsite" id="search" method="GET">
                             <fieldset class="search-site">
-                                <input placeholder="BUSCAR" id="busca-campo" class="expand-search" type="search"
+                                <input onfocus="on()" onblur="off()" id="busca-campo" class="expand-search" type="search"
                                     autocomplete="off" tabindex="1" name="q">
-                                <label for="busca-campo" class="lupa">
+                                <label for="busca-campo" class="lupa" id="lupa"  >
                                     <svg id="eixo-icone-busca">
                                         <path
                                             d="M21.67 20.42l-5.72-5.73c.98-1.26 1.55-2.83 1.55-4.54 0-4.14-3.36-7.5-7.5-7.5-4.15 0-7.5 3.36-7.5 7.5s3.35 7.5 7.5 7.5c1.7 0 3.27-.57 4.53-1.54l5.73 5.73c.42.41 1.07.43 1.46.04.39-.39.37-1.04-.05-1.46zM10 15.65c-3.04 0-5.5-2.46-5.5-5.5s2.46-5.5 5.5-5.5c3.03 0 5.5 2.46 5.5 5.5s-2.47 5.5-5.5 5.5z">

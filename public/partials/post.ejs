@@ -13,7 +13,7 @@
             <form action="/post" method="POST">
 
                 <div id="CARD" class="cont">
-                    
+
                     <div class="block bstn-item-shape ">
                         <div class="grid  feed_grid items-align-start">
                             <div class="feed-post-header color3 font-weight600 block">
@@ -69,7 +69,16 @@
 
                             </div>
                             <div class="feed-post-metadata font-weight400">
-                                <span class="feed-post-datetime">Há X minutos</span>
+                                <span class="feed-post-datetime">
+                                    <select id="parent" name="parent">
+
+                                        <%categories.forEach(element=> { %>
+                                            <option><%=element._id%>
+                                            </option>
+                                            <% }) %>
+                                           
+                                    </select>
+                                </span>
                                 <span class="feed-post-metadata-section"><input type="text" id="metadata.author"
                                         name="metadata.author" placeholder="Autor" required>
                                 </span>
@@ -106,7 +115,8 @@
 
                                 </div>
                                 <picture class="img_post">
-                                    <select onload="img(this)" onclick="img(this)" onchange="img(this)" id="midiatext" name="midiatext">
+                                    <select onload="img(this)" onclick="img(this)" onchange="img(this)" id="midiatext"
+                                        name="midiatext">
                                         <option value="">Vazio</option>
                                         <%files.forEach(element=> { %>
                                             <option>/content/<%=element%>
@@ -123,7 +133,8 @@
                                 </div>
 
                                 <picture class="img_post">
-                                    <select id="midiatext2" onload="img(this)" onchange="img(this)" onclick="img(this) name="midiatext2">
+                                    <select id="midiatext2" name="midiatext2" onload="img(this)" onchange="img(this)"
+                                        onclick="img(this)>
                                         <option value="">Vazio</option>
                                         <%files.forEach(element=> { %>
                                             <option>/content/<%=element%>
@@ -133,50 +144,52 @@
                                     </select>
                                 </picture>
 
-                                <div class="parag_text">
-                                    <p class="color3">
-                                        <input type="text" id="text3" name="text3" placeholder="POST - Terceiro Texto">
-                                    </p>
-                                </div>
-
-                                <picture class="img_post" >
-                                    <select id="midiatext3" onload="img(this)" onchange="img(this)" onclick="img(this)" name="midiatext3">
-                                        <option value="">Vazio</option>
-                                        <%files.forEach(element=> { %>
-                                            <option>/content/<%=element%>
-                                            </option>
-                                            <% }) %>
-
-                                    </select>
-                                </picture>
-                                <script>
-
-
-
-                                    function img(element) {
-                                        let picture = element.closest('picture');
-                                        console.log(picture)
-                                        picture.style.backgroundImage = 'url(' + element.value + ')';
-
-                                    }
-                                </script>
+                                <div class=" parag_text">
+                                        <p class="color3">
+                                            <input type="text" id="text3" name="text3"
+                                                placeholder="POST - Terceiro Texto">
+                                        </p>
                             </div>
+
+                            <picture class="img_post">
+                                <select id="midiatext3" onload="img(this)" onchange="img(this)" onclick="img(this)"
+                                    name="midiatext3">
+                                    <option value="">Vazio</option>
+                                    <%files.forEach(element=> { %>
+                                        <option>/content/<%=element%>
+                                        </option>
+                                        <% }) %>
+
+                                </select>
+                            </picture>
+                            <script>
+
+
+
+                                function img(element) {
+                                    let picture = element.closest('picture');
+                                    console.log(picture)
+                                    picture.style.backgroundImage = 'url(' + element.value + ')';
+
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <input type="text" id="citacao" name="citacao" placeholder="POST - Primeira citação">
-                    <input type="text" id="citacao1" name="citacao1" placeholder="POST - Segunda citação">
+    </div>
+    <div>
+        <input type="text" id="citacao" name="citacao" placeholder="POST - Primeira citação">
+        <input type="text" id="citacao1" name="citacao1" placeholder="POST - Segunda citação">
 
-                </div>
-                <div id="button">
-                    <button class="bgcolor1 color4">Send</button>
-                </div>
+    </div>
+    <div id="button">
+        <button class="bgcolor1 color4">Send</button>
+    </div>
 
 
 
-            </form>
-        </fieldset>
+    </form>
+    </fieldset>
     </div>
 
 

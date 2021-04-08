@@ -17,8 +17,25 @@
                             <div class="block">
                                 <div class=""></div> <!-- I DONT KNOW YET-->
                                 <div class="block feed">
-
+                                    <%var nposts=0 %>
                                     <% for(let x=numberposts; x>= 0; x--){ %>
+                                        <%nposts= nposts + 1 %>
+
+                                                    <%if (nposts==4){%>
+                                                        <div>
+                                                            <script async
+                                                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                                            <ins class="adsbygoogle" style="display:block"
+                                                                data-ad-format="fluid"
+                                                                data-ad-layout-key="-f9+4t+83-ex+44"
+                                                                data-ad-client="ca-pub-8358083090440708"
+                                                                data-ad-slot="7932403057"></ins>
+                                                            <script>
+                                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                                            </script>
+                                                        </div>
+                                                        <% nposts=0 %>
+                                                            <% } %>
                                         <div id="<%=doc[x]._id%>" class="block bstn-item-shape">
                                             <div class="grid  feed_grid items-align-start">
                                                 <div class="feed-post-header color3 font-weight600 block">

@@ -38,8 +38,9 @@ router.get('/search', async (req, res, next) => {
 
 
 
-router.get('/post', (req, res) => {
-    res.render('postpage.ejs', { files });
+router.get('/post', async (req, res) => {
+    let doc = await Categories.find().then(async dc => { return await dc })
+    res.render('postpage.ejs', { files , categories:doc});
 })
 
 router.post('/post', express.urlencoded({ extended: true }), async (req, res) => {
