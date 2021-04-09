@@ -31,9 +31,6 @@ function menuopen() {
             break;;
     }
 }
-
-
-
 function on() {
 
     if (!window.matchMedia("(min-width:768px)").matches) {
@@ -86,8 +83,6 @@ function off() {
     }
 
 }
-
-
 window.onload = () => {
 
     if (window.matchMedia("(min-width:768px)").matches) {
