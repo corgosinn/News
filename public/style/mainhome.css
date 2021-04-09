@@ -405,7 +405,7 @@ ul .grid_news{
     margin-left: 4px;
 }
 .feed-post-metadata-section:before {
-    content: "Em ";
+    content: "Escrito por: ";
 }
 .bstn-item-shape:after {
     background-color: #c8c8c8;

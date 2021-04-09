@@ -39,7 +39,60 @@
                                                             </script>
                                                         </div>
                                                         <% nposts=0 %>
-                                                            <% } %>
+                                        <% } %>
+                                        <% 
+                                            var dnow= Date.now();
+                                            let date= doc[x].metadata.date;
+
+                                            let author= doc[x].metadata.author;
+                                            let dateparse= Date.parse(date); 
+                                            let datenowms= dnow - dateparse; 
+                                            
+                                            let datenow= 0;
+                                            datenow = Math.floor(datenowms / 60000);
+                                            if (datenow <=60 ){
+                                                datenow='Há ' + datenow+ ' minutos atrás' ; }
+                                                if(datenow <=1440 && datenow> 60){
+                                                    datenow = Math.floor( datenow / 60);
+                                                    if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' hora atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' horas atrás';
+                                                    }
+                                                }
+                                                if(datenow <= 10080 && datenow> 1440){
+                                                    datenow = Math.floor( datenow / 1440);
+                                                    if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' dia atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' dias atrás';
+                                                    }
+                                                    }
+                                                    if(datenow <= 43800 && datenow> 10080){
+                                                        datenow = Math.floor( datenow / 10080);
+                                                        if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' semana atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' semanas atrás';
+                                                    }
+                                                        }
+                                                        if(datenow <= 525600 && datenow> 43800){
+                                                            datenow = Math.floor( datenow / 43800);
+                                                            if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' mês atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' meses atrás';
+                                                    }
+                                                            }
+                                                            if(datenow > 525600){
+                                                            datenow = Math.floor( datenow / 525600);
+                                                            if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' ano atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' anos atrás';
+                                                    }
+                                                            }
+                                            %>
                                         <div id="<%=doc[x]._id%>" class="block bstn-item-shape">
                                             <div class="grid  feed_grid items-align-start">
                                                 <div class="feed-post-header color3 font-weight600 block">
@@ -73,9 +126,8 @@
                                                     </div>
                                                     <%}%>
                                                         <div class="feed-post-metadata font-weight400">
-                                                            <span class="feed-post-datetime">Há 40 minutos</span>
-                                                            <span class="feed-post-metadata-section"> Blog da
-                                                                Andréia Sadi
+                                                            <span class="feed-post-datetime"><%=datenow%></span>
+                                                            <span class="feed-post-metadata-section"> <%=author%>
                                                             </span>
                                                         </div>
 

@@ -152,87 +152,141 @@
                                             (adsbygoogle = window.adsbygoogle || []).push({});
                                         </script>
 
-                                        <%var nposts=0 %>
+                                        <%
+                                        var nposts=0;
+                                        
+                                         %>
 
-                                            <% for(let x=numberposts; x>= 0; x--){ %>
+                                        <% for(let x=numberposts; x>= 0; x--){ %>
 
-                                                <%nposts= nposts + 1 %>
+                                            <%nposts= nposts + 1 %>
 
-                                                    <%if (nposts==4){%>
-                                                        <div>
-                                                            <script async
-                                                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                                            <ins class="adsbygoogle" style="display:block"
-                                                                data-ad-format="fluid"
-                                                                data-ad-layout-key="-f9+4t+83-ex+44"
-                                                                data-ad-client="ca-pub-8358083090440708"
-                                                                data-ad-slot="7932403057"></ins>
-                                                            <script>
-                                                                (adsbygoogle = window.adsbygoogle || []).push({});
-                                                            </script>
-                                                        </div>
-                                                        <% nposts=0 %>
-                                                            <% } %>
+                                            <%if (nposts==4){%>
+                                                <div>
+                                                    <script async
+                                                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                                    <ins class="adsbygoogle" style="display:block"
+                                                        data-ad-format="fluid"
+                                                        data-ad-layout-key="-f9+4t+83-ex+44"
+                                                        data-ad-client="ca-pub-8358083090440708"
+                                                        data-ad-slot="7932403057"></ins>
+                                                    <script>
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    </script>
+                                                </div>
+                                            <% nposts=0 %>
+                                            <% } %>
 
+                                            <% 
+                                            var dnow= Date.now();
+                                            let date= doc[x].metadata.date;
+                                            let author= doc[x].metadata.author;
+                                            let dateparse= Date.parse(date); 
+                                            let datenowms= dnow - dateparse; 
+                                            
+                                            let datenow= 0;
+                                            datenow = Math.floor(datenowms / 60000);
+                                            if (datenow <=60 ){
+                                                datenow='Há ' + datenow+ ' minutos atrás' ; }
+                                                if(datenow <=1440 && datenow> 60){
+                                                datenow = Math.floor( datenow / 60);
+                                                    if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' hora atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' horas atrás';
+                                                    }
+                                                }
+                                                if(datenow <= 10080 && datenow> 1440){
+                                                    datenow = Math.floor( datenow / 1440);
+                                                    if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' dia atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' dias atrás';
+                                                    }
+                                                    }
+                                                    if(datenow <= 43800 && datenow> 10080){
+                                                        datenow = Math.floor( datenow / 10080);
+                                                        if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' semana atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' semanas atrás';
+                                                    }
+                                                        }
+                                                        if(datenow <= 525600 && datenow> 43800){
+                                                            datenow = Math.floor( datenow / 43800);
+                                                            if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' mês atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' meses atrás';
+                                                    }
+                                                            }
+                                                            if(datenow > 525600){
+                                                            datenow = Math.floor( datenow / 525600);
+                                                            if (datenow == 1){
+                                                        datenow = 'Há '+ datenow+ ' ano atrás';
+                                                    }else{
+                                                        datenow = 'Há '+ datenow+ ' anos atrás';
+                                                    }
+                                                            }
+                                            %>
 
-                                                                <div id="<%=doc[x]._id%>" class="block bstn-item-shape">
-                                                                    <div class="grid  feed_grid items-align-start">
-                                                                        <div
-                                                                            class="feed-post-header color3 font-weight600 block">
-                                                                            <span class="feed-post-header-chapeu">
-                                                                                <%=doc[x].cardchapeutitle%>
-                                                                            </span>
-                                                                        </div>
-                                                                        <div
-                                                                            class="feed-post-body-title font-weight700 block">
-                                                                            <div class="block">
-                                                                                <a href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>"
-                                                                                    class="feed-post-link color1">
-                                                                                    <%=doc[x].cardbodytitle%>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="feed-post-body-resumo font-weight400">
-                                                                            <%=doc[x].cardbodyresume%>
-                                                                        </div>
-                                                                        <%if(doc[x].cardimg){ %>
-                                                                            <div class="feed-media-wrapper block">
-                                                                                <a
-                                                                                    href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>">
-                                                                                    <div class="bstn-fd-item-cover ">
-
-                                                                                        <picture
-                                                                                            class="bstn-fd-cover-picture"
-                                                                                            style="background-image: url('<%=doc[x].cardimg%>');">
-
-                                                                                        </picture>
-
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>
-                                                                            <%}%>
-                                                                                <div
-                                                                                    class="feed-post-metadata font-weight400">
-                                                                                    <span class="feed-post-datetime">Há
-                                                                                        40
-                                                                                        minutos</span>
-                                                                                    <span
-                                                                                        class="feed-post-metadata-section">
-                                                                                        Blog da
-                                                                                        Andréia Sadi
-                                                                                    </span>
-                                                                                </div>
-
-                                                                    </div>
+                                                    <div id="<%=doc[x]._id%>"
+                                                        class="block bstn-item-shape">
+                                                        <div
+                                                            class="grid  feed_grid items-align-start">
+                                                            <div
+                                                                class="feed-post-header color3 font-weight600 block">
+                                                                <span
+                                                                    class="feed-post-header-chapeu">
+                                                                    <%=doc[x].cardchapeutitle%>
+                                                                </span>
+                                                            </div>
+                                                            <div
+                                                                class="feed-post-body-title font-weight700 block">
+                                                                <div class="block">
+                                                                    <a href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>"
+                                                                        class="feed-post-link color1">
+                                                                        <%=doc[x].cardbodytitle%>
+                                                                    </a>
                                                                 </div>
-                                                                <% } %>
+                                                            </div>
+                                                            <div
+                                                                class="feed-post-body-resumo font-weight400">
+                                                                <%=doc[x].cardbodyresume%>
+                                                            </div>
+                                                            <%if(doc[x].cardimg){ %>
+                                                                <div
+                                                                    class="feed-media-wrapper block">
+                                                                    <a
+                                                                        href="/noticias/<%=doc[x].parent%>/<%=doc[x]._id%>">
+                                                                        <div
+                                                                            class="bstn-fd-item-cover ">
 
+                                                                            <picture
+                                                                                class="bstn-fd-cover-picture"
+                                                                                style="background-image: url('<%=doc[x].cardimg%>');">
 
+                                                                            </picture>
 
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <%}%>
+                                                                    <div
+                                                                        class="feed-post-metadata font-weight400">
+                                                                        <span
+                                                                            class="feed-post-datetime">
+                                                                            <%= datenow %>
+                                                                        </span>
+                                                                        <span
+                                                                            class="feed-post-metadata-section">
+                                                                            <%=author%>
+                                                                        </span>
+                                                                    </div>
 
-
-
+                                                        </div>
+                                                    </div>
+                                            <% } %>
 
                                     </div>
                                 </div>
