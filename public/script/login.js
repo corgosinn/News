@@ -26,6 +26,13 @@ function onSuccess(googleUser) {
     console.log("Name: " + profile.getName());
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
+    
+    let meubotao = document.getElementById('meu-botao');
+    let username = document.getElementById('username-top');
+    meubotao.style.display = 'none';
+    let singout = document.getElementById('singout');
+    singout.style.display = 'inline-block';
+    username.innerHTML = profile.getName;
 
     // Recuperando o token do usuario. Essa informação você necessita passar para seu backend
     var id_token = googleUser.getAuthResponse().id_token;
