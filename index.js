@@ -10,14 +10,11 @@ app.set("view engine", "ejs");
 
 const routes = require('./routes/routessite');
 const categoriesRoutes = require('./routes/categoriesRoutes');
+const routesMore = require('./routes/routesMore');
 
 app.use('/', routes);
-
+app.use('/mais', routesMore);
 app.use('/noticias', categoriesRoutes)
-
-
-
-
 
 
 

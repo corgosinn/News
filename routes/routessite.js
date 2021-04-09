@@ -38,6 +38,7 @@ router.get('/search', async (req, res, next) => {
 
 
 
+
 router.get('/post', async (req, res) => {
     let doc = await Categories.find().then(async dc => { return await dc })
     res.render('postpage.ejs', { files , categories:doc});
