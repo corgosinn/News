@@ -8,7 +8,11 @@
     <title>J1 - <%=doc[0].cardbodytitle%>
     </title>
     <%- include('./partials/head.ejs') %>
-  
+    <meta name="twitter:card" content="summary"><!-- required -->
+    <meta name="twitter:site" content="@https://portalj1.com.br/"><!-- required -->
+    <meta name="twitter:title" content="<%=doc[0].cardbodytitle%>"><!-- required -->
+    <meta name="twitter:description" content="<%=doc[0].cardbodyresume%>.">
+    <meta name="twitter:image" content="<%=doc[0].cardimg%>">
     
 </head>
 
