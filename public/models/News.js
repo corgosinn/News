@@ -38,8 +38,10 @@ postpage.index({
     citacao1: 'text',
     parent: 'text',
 })
+
 const News = mongoose.model('news', postpage);
-News.createIndexes();
+
+
 
 
 module.exports = News;
